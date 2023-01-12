@@ -7,7 +7,6 @@ HTTPS desteği: PWA'lar sadece HTTPS destekli sitelerde çalışır. Sitenizi HT
 
 manifest.json dosyası oluşturun: Bu dosya PWA'nın nasıl görüneceği ve nasıl çalışacağı hakkında bilgi içerir. Örnek bir manifest dosyası şu şekildedir:
 
-Copy code
 {
   "name": "My PWA",
   "short_name": "My PWA",
@@ -23,11 +22,11 @@ Copy code
     }
   ]
 }
+
 service worker oluşturun: Bu, PWA'nın çalışması için gerekli olan bir JavaScript dosyasıdır. Service worker, PWA'nın offline çalışmasını, bildirimleri ve diğer özellikleri sağlar.
 
 manifest.json ve service worker dosyasını sitenize ekleyin: Bu dosyaları sitenizin kök dizinine yükleyin ve HTML dosyalarınızda referans olarak ekleyin. Örnek olarak :
 
-Copy code
   <link rel="manifest" href="/manifest.json">
   <script src="service-worker.js"></script>
 PWA test etmek için Lighthouse veya diğer araçları kullanabilirsiniz. Bu araçlar, PWA'nızın ne kadar iyi çalıştığını ve nasıl optimize edebileceğinizi gösterir.
