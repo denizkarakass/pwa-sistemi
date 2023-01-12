@@ -1,29 +1,35 @@
 # pwa-sistemi
 PWA ios ve android için web sitenizi telefonlara uygulama şeklinde kaydetmesini sağlar.
 
-1)Sistemi sitenize uygulayabilmek için index.html de bulunan:
-        <link rel="stylesheet" href="src/master.css">
-        <link rel="manifest" href="manifest.json">
-        <link rel="apple-touch-icon" href="images/logo192.png">
-        <!--PWA FOR İOS Support Kodlar-->
-        <link rel="apple-touch-icon" href="images/logo96.png">
-        <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-title" content="Osman Gültekin"> 
-bu kodları  kendi sitenizin head kısmına  ekleyin content content="Osman Gültekin" kısmını kendi başlığınıza göre değiştirin. Logo kısımlarınıda kendi logolarınız ile değiştiriniz.
+Progressive Web App (PWA) eklemek için aşağıdaki adımları izleyebilirsiniz:
 
+HTTPS desteği: PWA'lar sadece HTTPS destekli sitelerde çalışır. Sitenizi HTTPS'ye geçirmeniz gerekir.
 
-2)Aşağıdaki script koduna kendi sitenizin body kısmına ekleyin.
-        <script src="src/index.js"></script>
-        
-        
-3)İstediğiniz logoları images dosyası altında belirtilen boyutlarda hazırladığınız logolar ile değiştirin bunun için canva kullanabilirsiniz.
+manifest.json dosyası oluşturun: Bu dosya PWA'nın nasıl görüneceği ve nasıl çalışacağı hakkında bilgi içerir. Örnek bir manifest dosyası şu şekildedir:
 
-4) manifest.json dosyasını projenize import edin ve içeriğini istekleriniz doğrultusunda değiştirin.
+Copy code
+{
+  "name": "My PWA",
+  "short_name": "My PWA",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
+service worker oluşturun: Bu, PWA'nın çalışması için gerekli olan bir JavaScript dosyasıdır. Service worker, PWA'nın offline çalışmasını, bildirimleri ve diğer özellikleri sağlar.
 
-5) sw.js dosyasını import edin.
+manifest.json ve service worker dosyasını sitenize ekleyin: Bu dosyaları sitenizin kök dizinine yükleyin ve HTML dosyalarınızda referans olarak ekleyin. Örnek olarak :
 
-6) SRC klasörünü import edin.
-
-HEPSİ BU KADAR BASİT VE KULLANIŞLI 
+Copy code
+  <link rel="manifest" href="/manifest.json">
+  <script src="service-worker.js"></script>
+PWA test etmek için Lighthouse veya diğer araçları kullanabilirsiniz. Bu araçlar, PWA'nızın ne kadar iyi çalıştığını ve nasıl optimize edebileceğinizi gösterir.
+Not: Bu yukarıdaki işlemler sadece PWA'nın temel özelliklerini eklemenizi sağlar. PWA'nın tüm özelliklerini kullanmak için daha fazla özelleştirme yapmanız gerekebilir.
 
